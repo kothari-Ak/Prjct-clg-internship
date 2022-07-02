@@ -82,10 +82,10 @@ module.exports.getCollegeDetails = async function (req, res) {
             return res.status(400).send({ status: false, msg: "You are allowed to give only one QueryParam ⚠️⚠️" });
         }
 
-        const obj = Object.keys(data)
-        if(!obj.includes("collegeName")){
-            return res.status(400).send({status: false, msg: "QueryParam must contain collegeName as a key ⚠️⚠️"})
-        }
+        // const obj = Object.keys(data)
+        // if(!obj.includes("collegeName")){
+        //     return res.status(400).send({status: false, msg: "QueryParam must contain collegeName as a key ⚠️⚠️"})
+        // }
         const obj1 = Object.values(data) 
         console.log(obj1)
         filterQuery.name = obj1
