@@ -26,7 +26,7 @@ module.exports.createCollege = async function (req, res) {
             return res.status(400).send({ Status: false, message: "Please provide all the details ⚠️⚠️" })
         }
 
-        if (!name || name == "") {
+        if (!name || name.trim()== "") {
             return res.status(400).send({ Status: false, message: "Please provide name ⚠️⚠️" })
         }
         name = data.name = name.trim()
@@ -41,7 +41,7 @@ module.exports.createCollege = async function (req, res) {
             }
         }
 
-        if (!fullName || fullName == "") {
+        if (!fullName || fullName.trim() == "") {
             return res.status(400).send({ Status: false, message: "Please provide fullName ⚠️⚠️" })
         }
 
@@ -50,7 +50,7 @@ module.exports.createCollege = async function (req, res) {
             return res.status(400).send({ Status: false, message: "Please enter valid fullName ⚠️⚠️" })
         }
 
-        if (!logoLink || logoLink == "") {
+        if (!logoLink || logoLink.trim() == "") {
             return res.status(400).send({ Status: false, message: "Please provide valid logoLink ⚠️⚠️" })
         }
 

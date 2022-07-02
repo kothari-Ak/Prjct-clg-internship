@@ -18,12 +18,12 @@ module.exports.createIntern = async function (req, res) {
         if (Object.keys(data).length === 0)
             return res.status(400).send({ Status: false, message: "Please provide all the required data ⚠️⚠️" })
 
-        if (!name || name == "")
+        if (!name || name.trim() == "")
             return res.status(400).send({ Status: false, message: "Please provide name ⚠️⚠️" })
         else
             data.name = data.name.trim()
 
-        if (!email || email == "")
+        if (!email || email.trim() == "")
             return res.status(400).send({ Status: false, message: "Please provide email ⚠️⚠️" })
         else
             data.email = data.email.trim()
@@ -40,7 +40,7 @@ module.exports.createIntern = async function (req, res) {
             }
         }
 
-        if (!mobile || mobile == "") {
+        if (!mobile || mobile.trim()== "") {
             return res.status(400).send({ Status: false, message: "Please provide mobile number ⚠️⚠️" })
         }
         if (!mobileRegex.test(mobile)) {
@@ -55,7 +55,7 @@ module.exports.createIntern = async function (req, res) {
         }
         else { data.mobile = data.mobile.trim() }
 
-        if (!collegeName || collegeName == "") {
+        if (!collegeName || collegeName.trim() == "") {
             return res.status(400).send({ Status: false, message: "Please provide collegeName ⚠️⚠️" })
         }
         else { data.collegeName = data.collegeName.trim() }
